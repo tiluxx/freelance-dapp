@@ -33,15 +33,18 @@ function Home() {
                                     flexible and cost-effective platform.
                                 </p>
                                 <div className={cx('btn-wrapper', 'd-flex', 'align-items-center')}>
-                                    <Link to={config.home} className="btn rounded-pill btn-primary-style fw-bold">
+                                    <Link
+                                        to={config.routes.home}
+                                        className="btn rounded-pill btn-primary-style fw-bold"
+                                    >
                                         Get started
                                     </Link>
                                 </div>
                             </div>
                         </Col>
                         <Col md={6}>
-                            <div className="img">
-                                <img src={headerImg} alt="Header figure" />
+                            <div>
+                                <img src={headerImg} alt="Header figure" className={cx('header-figure-main')} />
                             </div>
                         </Col>
                     </Row>

@@ -53,6 +53,10 @@ header {
     color: #666;
 }
 
+.header-figure-main {
+    animation: floating 5s infinite ease-in-out;
+}
+
 .header-figure-bg {
     position: absolute;
     left: 0;
@@ -67,4 +71,31 @@ header {
 
 .btn-wrapper {
     margin-top: 50px;
+}
+
+// Animation
+@keyframes floating {
+    0% {
+        -webkit-transform: translate(0, 0px);
+        transform: translate(0, 0px);
+    }
+    50% {
+        -webkit-transform: translate(0, 20px);
+        transform: translate(0, 20px);
+    }
+    100% {
+        -webkit-transform: translate(0, -0px);
+        transform: translate(0, -0px);
+    }
+}
+
+@keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
