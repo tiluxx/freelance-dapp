@@ -126,14 +126,42 @@ a {
     font-weight: 500;
 }
 
+.btn.contact-btn:hover,
 .btn.send-btn:hover {
     color: #fff;
     border-color: var(--primary-color);
 }
 
-/* bootstrap */
+.btn.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    font-weight: 500;
+}
+
+/* custom css */
 .MuiCard-root {
     font-family: 'Inter', sans-serif !important;
+}
+
+.MuiMenuItem-root.MuiMenuItem-colorNeutral {
+    padding: 10px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.MuiMenuItem-root.MuiMenuItem-colorNeutral svg {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+}
+
+.fs-2 {
+    font-size: 2rem;
 }
 
 /*------------- navbar -------------*/
