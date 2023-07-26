@@ -1,0 +1,140 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@300;400;500;700;800&display=swap');
+
+:root {
+    --primary-color: hsl(244, 100%, 50%);
+    --gradient-color-purple-pink: linear-gradient(
+        to right,
+        #501e9c 0%,
+        #8169f1 30%,
+        #8169f1 30%,
+        #a44cee 73%,
+        #ff847f 100%
+    );
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    font-size: 0.9em;
+    overflow-x: hidden;
+    position: relative;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.4;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-primary-style {
+    padding: 12px 30px;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+.btn-primary-style {
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.btn-primary-style:hover {
+    color: #fff;
+    background-color: var(--primary-color);
+    box-shadow: 0px 4px 20px 0px rgba(176, 65, 255, 0.427);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+/*------------- navbar -------------*/
+.navbar.navbar-style {
+    padding: 20px 15px;
+}
+
+.navbar.navbar-style .nav-link,
+.navbar.navbar-style .nav-item {
+    position: relative;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 15px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+.nav-link a,
+.nav-item a {
+    color: #000;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+a:hover,
+.nav-list .nav-link:hover,
+.nav-list .nav-item:hover {
+    color: var(--primary-color);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+.btn-outline-style {
+    padding: 8px;
+    border: 1px solid transparent;
+    border-color: #0002 !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+.btn-outline-style a,
+.btn-primary-style a {
+    padding: 10px 25px;
+}
+
+.btn-outline-style:hover {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+.btn-outline-style:hover a {
+    color: #fff;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}

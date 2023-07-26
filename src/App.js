@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { publicRoutes } from '~/routes'
+import { publicRoutes } from 'src/routes'
 
 function App() {
     return (

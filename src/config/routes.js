@@ -1,7 +1,8 @@
 const routes = {
     home: '/',
-    findJob: '/find_job',
-    findTalent: '/find_Talent',
+    findWork: '/find_work',
+    findTalent: '/find_talent',
+    about: '/about',
     notFound: '*',
 }
 

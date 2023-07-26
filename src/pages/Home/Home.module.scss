@@ -1,0 +1,70 @@
+header {
+    position: relative;
+    padding: 60px 0;
+}
+
+.content {
+    position: relative;
+}
+
+.header-wrapper {
+    position: relative;
+    z-index: 5;
+}
+
+.badge-small {
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    background-color: hsla(243, 100%, 90%, 0.304);
+    border-radius: 5px;
+    color: var(--primary-color);
+}
+
+.header-title {
+    margin-bottom: 30px;
+    font-size: 5.2rem;
+    line-height: 6rem;
+    color: #000;
+}
+
+.header-title span {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#501e9c),
+        color-stop(30%, #8169f1),
+        color-stop(30%, #8169f1),
+        color-stop(73%, #a44cee),
+        to(#ff847f)
+    );
+    background-image: -webkit-linear-gradient(left, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
+    background-image: -o-linear-gradient(left, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
+    background-image: linear-gradient(to right, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
+}
+
+.header-subtitle {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.header-figure-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -webkit-animation: rotate-center 100s linear infinite both;
+    animation: rotate-center 100s linear infinite both;
+}
+
+.btn-wrapper {
+    margin-top: 50px;
+}
