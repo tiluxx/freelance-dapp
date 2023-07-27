@@ -7,6 +7,7 @@ import FindWork from 'src/pages/FindWork'
 import FindTalent from 'src/pages/FindTalent'
 import CreateWork from 'src/pages/CreateWork'
 import Messages from 'src/pages/Messages'
+import Profile from 'src/pages/Profile'
 
 // Public routes
 const publicRoutes = [
@@ -16,6 +17,7 @@ const publicRoutes = [
     { path: config.routes.about, component: Home, layout: HomeLayout },
     { path: config.routes.createWork, component: CreateWork, layout: HomeLayout },
     { path: config.routes.messages, component: Messages, layout: HomeLayout },
+    { path: config.routes.profile, component: Profile, layout: HomeLayout },
     { path: config.routes.notFound, component: Home, layout: HomeLayout },
 ]
 

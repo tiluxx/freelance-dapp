@@ -111,7 +111,7 @@ function Header() {
                                         sx={{ boxShadow: 'md', bgcolor: 'background.body' }}
                                         placement="bottom-end"
                                     >
-                                        <Link>
+                                        <Link to={config.routes.profile}>
                                             <MenuItem onClick={handleClose}>
                                                 <PersonAvailableRegular />
                                                 Profile

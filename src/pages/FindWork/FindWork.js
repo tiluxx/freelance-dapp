@@ -23,7 +23,9 @@ function FindWork() {
             <Container>
                 <Row>
                     {/* Banner */}
-                    <Banner title='Browse Work' />
+                    <Col xs={12} className={cx('banner-wrapper')}>
+                        <Banner title="Browse Work" />
+                    </Col>
 
                     {/* Works grid */}
                     <Col xs={12} md={9}>

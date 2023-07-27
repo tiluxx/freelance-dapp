@@ -22,7 +22,9 @@ function FindTalent() {
             <Container>
                 <Row>
                     {/* Banner */}
-                    <Banner title='Find Talents'/>
+                    <Col xs={12} className={cx('banner-wrapper')}>
+                        <Banner title="Find Talents" />
+                    </Col>
 
                     {/* Talents grid */}
                     <Col xs={12}>

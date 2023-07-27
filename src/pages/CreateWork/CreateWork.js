@@ -46,7 +46,7 @@ function CreateWork() {
                                 }}
                             >
                                 <h3 className={cx('form-title')}>About the work</h3>
-                                <Divider inset="none" />
+                                <Divider insert="none" />
                                 <CardContent
                                     sx={{
                                         display: 'grid',
@@ -55,7 +55,9 @@ function CreateWork() {
                                     }}
                                 >
                                     <FormControl sx={{ gridColumn: '1/-1' }}>
-                                        <FormLabel className={cx('fo')}>Give your project brief a title</FormLabel>
+                                        <FormLabel className={cx('fo')} sx={{ my: '12px' }}>
+                                            Give your project brief a title
+                                        </FormLabel>
                                         <Input
                                             slotProps={{
                                                 input: {

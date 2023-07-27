@@ -5,6 +5,7 @@ const routes = {
     about: '/about',
     createWork: '/create_work',
     messages: '/messages',
+    profile: '/profile',
     notFound: '*',
 }
 

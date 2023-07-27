@@ -1,0 +1,25 @@
+.banner-wrapper {
+    padding-bottom: 20px;
+}
+
+.talent-name {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 600;
+}
+
+.talent-role {
+    margin-top: 4px;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: var(--neutral-color);
+}
+
+.talent-bio {
+    max-width: 24ch;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
