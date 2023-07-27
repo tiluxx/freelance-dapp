@@ -160,6 +160,35 @@ a {
     font-size: 2rem;
 }
 
+.MuiFormLabel-root {
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.4rem !important;
+}
+
+.MuiTextarea-root,
+.MuiInput-input {
+    padding: 12px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.4rem !important;
+}
+
+.MuiInput-startDecorator,
+.MuiTypography-root.MuiTypography-body1,
+.MuiTypography-root.MuiTypography-body2,
+.MuiSheet-root.MuiSheet-variantSoft,
+.MuiSelect-root.MuiSelect-variantPlain.MuiSelect-colorNeutral,
+.MuiSelect-root.Mui-expanded.MuiSelect-variantPlain.MuiSelect-colorNeutral {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+}
+
+.MuiTypography-root.MuiTypography-body3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+}
+
 .fs-2 {
     font-size: 2rem;
 }

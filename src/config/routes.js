@@ -4,6 +4,7 @@ const routes = {
     findTalent: '/find_talent',
     about: '/about',
     createWork: '/create_work',
+    messages: '/messages',
     notFound: '*',
 }
 

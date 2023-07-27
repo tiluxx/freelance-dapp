@@ -6,14 +6,13 @@ import Avatar from '@mui/joy/Avatar'
 import Chip from '@mui/joy/Chip'
 import Box from '@mui/joy/Box'
 import Card from '@mui/joy/Card'
-import CardCover from '@mui/joy/CardCover'
 import CardContent from '@mui/joy/CardContent'
 import CardOverflow from '@mui/joy/CardOverflow'
 import CardActions from '@mui/joy/CardActions'
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined'
 
+import Banner from 'src/pages/components/Banner'
 import styles from './FindTalent.module.scss'
-import bannerImg from './banner.jpg'
 
 const cx = classNames.bind(styles)
 
@@ -23,13 +22,7 @@ function FindTalent() {
             <Container>
                 <Row>
                     {/* Banner */}
-                    <Col xs={12} className={cx('banner-wrapper')}>
-                        <Card component="li" sx={{ minWidth: 300, minHeight: 160, flexGrow: 1 }}>
-                            <CardCover>
-                                <img src={bannerImg} loading="lazy" alt="Banner" />
-                            </CardCover>
-                        </Card>
-                    </Col>
+                    <Banner title='Find Talents'/>
 
                     {/* Talents grid */}
                     <Col xs={12}>

@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col'
 import Avatar from '@mui/joy/Avatar'
 import Box from '@mui/joy/Box'
 import Card from '@mui/joy/Card'
-import CardCover from '@mui/joy/CardCover'
 import CardContent from '@mui/joy/CardContent'
 import CardActions from '@mui/joy/CardActions'
 import IconButton from '@mui/joy/IconButton'
@@ -13,8 +12,8 @@ import Typography from '@mui/joy/Typography'
 import Chip from '@mui/joy/Chip'
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder'
 
+import Banner from 'src/pages/components/Banner'
 import styles from './FindWork.module.scss'
-import bannerImg from './banner.jpg'
 
 const cx = classNames.bind(styles)
 
@@ -24,13 +23,7 @@ function FindWork() {
             <Container>
                 <Row>
                     {/* Banner */}
-                    <Col xs={12} className={cx('banner-wrapper')}>
-                        <Card component="li" sx={{ minWidth: 300, minHeight: 160, flexGrow: 1 }}>
-                            <CardCover>
-                                <img src={bannerImg} loading="lazy" alt="Banner" />
-                            </CardCover>
-                        </Card>
-                    </Col>
+                    <Banner title='Browse Work' />
 
                     {/* Works grid */}
                     <Col xs={12} md={9}>

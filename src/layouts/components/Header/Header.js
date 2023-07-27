@@ -63,12 +63,16 @@ function Header() {
                     </Nav>
                     {true && (
                         <Nav className={cx('profile-wrapper')}>
-                            <Nav.Link href="#" className="fs-2">
-                                <ChatRegular />
-                            </Nav.Link>
-                            <Nav.Link href="#" className="fs-2">
-                                <AlertRegular />
-                            </Nav.Link>
+                            <Nav.Item href="#" className="fs-2">
+                                <Link to={config.routes.messages}>
+                                    <ChatRegular />
+                                </Link>
+                            </Nav.Item>
+                            <Nav.Item href="#" className="fs-2">
+                                <Link to={config.routes.messages}>
+                                    <AlertRegular />
+                                </Link>
+                            </Nav.Item>
                             <Nav.Link
                                 ref={buttonRef}
                                 id="composition-button"
