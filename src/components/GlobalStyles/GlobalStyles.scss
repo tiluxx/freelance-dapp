@@ -3,7 +3,9 @@
 
 :root {
     --primary-color: hsl(244, 100%, 50%);
-    --neutral-color: #5a5a72;
+    --neutral-color: hsl(240, 12%, 40%);
+    --background-color-surface: #09090D;
+    --background-color-body: #131318;
     --gradient-color-purple-pink: linear-gradient(
         to right,
         #501e9c 0%,
@@ -32,6 +34,7 @@ body {
     position: relative;
     font-weight: 400;
     line-height: 1.5;
+    background-color: var(--background-color-body);
 }
 
 h1,
@@ -195,9 +198,14 @@ a {
     font-size: 1.4rem;
 }
 
-.MuiTypography-root.MuiTypography-body3 {
+.MuiTypography-root.MuiTypography-body3,
+.MuiButton-root.MuiButton-colorNeutral {
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
+}
+
+.MuiButton-root.MuiButton-colorNeutral {
+    padding: 10px 20px;
 }
 
 .fs-2 {

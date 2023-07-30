@@ -8,6 +8,10 @@ import FindTalent from 'src/pages/FindTalent'
 import CreateWork from 'src/pages/CreateWork'
 import Messages from 'src/pages/Messages'
 import Profile from 'src/pages/Profile'
+import SendProposal from 'src/pages/SendProposal'
+import WorkProposals from 'src/pages/WorkProposals'
+import WorkDashboard from 'src/pages/WorkDashboard'
+import WorkDetail from 'src/pages/WorkDetail'
 
 // Public routes
 const publicRoutes = [
@@ -18,6 +22,10 @@ const publicRoutes = [
     { path: config.routes.createWork, component: CreateWork, layout: HomeLayout },
     { path: config.routes.messages, component: Messages, layout: HomeLayout },
     { path: config.routes.profile, component: Profile, layout: HomeLayout },
+    { path: config.routes.sendProposal, component: SendProposal, layout: HomeLayout },
+    { path: config.routes.workProposals, component: WorkProposals, layout: HomeLayout },
+    { path: config.routes.workDashboard, component: WorkDashboard, layout: HomeLayout },
+    { path: config.routes.workDetail, component: WorkDetail, layout: HomeLayout },
     { path: config.routes.notFound, component: Home, layout: HomeLayout },
 ]
 

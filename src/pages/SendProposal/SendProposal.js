@@ -19,11 +19,11 @@ import Chip from '@mui/joy/Chip'
 import Typography from '@mui/joy/Typography'
 
 import Banner from 'src/pages/components/Banner'
-import styles from './CreateWork.module.scss'
+import styles from './SendProposal.module.scss'
 
 const cx = classNames.bind(styles)
 
-function CreateWork() {
+function SendProposal() {
     const [currency, setCurrency] = useState('dollar')
     return (
         <div>
@@ -31,11 +31,61 @@ function CreateWork() {
                 <Container>
                     <Row>
                         {/* Banner */}
-                        <Col xs={12} className={cx('banner-wrapper')}>
-                            <Banner title="Post New Work" />
+                        <Col xs={12} className={cx('card-wrapper')}>
+                            <Banner title="Send Your Proposal" />
                         </Col>
 
-                        {/* Create job form */}
+                        {/* Work information */}
+                        <Col xs={12} className={cx('card-wrapper')}>
+                            <Card
+                                variant="outlined"
+                                sx={{
+                                    width: '100%',
+                                }}
+                                className={cx('work-wrapper')}
+                            >
+                                <CardContent>
+                                    <Box>
+                                        <Row>
+                                            <Col xs={12}>
+                                                <h5 className={cx('work-title')}>
+                                                    Image Recognition & Object Detection System
+                                                </h5>
+                                            </Col>
+                                            <Col xs={12}>
+                                                <small className={cx('work-subtitle')}>
+                                                    <span className={cx('work-subtitle_price')}>Fixed price: $500</span>
+                                                    <span>
+                                                        &nbsp;-&nbsp;<span>Entry level</span>
+                                                    </span>
+                                                </small>
+                                            </Col>
+                                        </Row>
+                                    </Box>
+                                    <Box>
+                                        <p className={cx('work-desc')}>
+                                            Hey freelancers, we have a live website (landing page). We are looking for a
+                                            skilled web developer who can help us refresh our project. Our goal is to
+                                            modify certain sections, add appealing animations to the website, optimize
+                                            it, and overall give the design a fresh look. I will send detailed
+                                            information and a link to the ready design directly via DM. !!! GreenSock,
+                                            Threejs or webgl for the web animation is required !!! moreabout "Frontend
+                                            development (figma to html), React or something like this.
+                                        </p>
+                                    </Box>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '10px' }}>
+                                        <Chip variant="soft" color="neutral" size="lg" sx={{ pointerEvents: 'none' }}>
+                                            AI
+                                        </Chip>
+                                        <Chip variant="soft" color="neutral" size="lg" sx={{ pointerEvents: 'none' }}>
+                                            UI/UX
+                                        </Chip>
+                                    </Box>
+                                </CardContent>
+                            </Card>
+                        </Col>
+
+                        {/* Create proposal */}
                         <Col xs={12} lg={8}>
                             <Card
                                 variant="outlined"
@@ -47,8 +97,8 @@ function CreateWork() {
                                     py: '32px',
                                 }}
                             >
-                                <h3 className={cx('form-title')}>About the work</h3>
-                                <Divider insert="none" />
+                                <h3 className={cx('form-title')}>About Your Proposal</h3>
+                                <Divider insert="none" sx={{ '--Divider-lineColor': 'rgb( 115 115 140)' }} />
                                 <CardContent
                                     sx={{
                                         display: 'grid',
@@ -57,40 +107,7 @@ function CreateWork() {
                                     }}
                                 >
                                     <FormControl sx={{ gridColumn: '1/-1' }}>
-                                        <FormLabel className={cx('fo')} sx={{ my: '12px' }}>
-                                            Give your project brief a title
-                                        </FormLabel>
-                                        <Input
-                                            slotProps={{
-                                                input: {
-                                                    name: 'work-title',
-                                                },
-                                            }}
-                                        />
-                                    </FormControl>
-                                    <FormControl sx={{ gridColumn: '1/-1' }}>
-                                        <FormLabel>What are you looking to get done?</FormLabel>
-                                        <Textarea
-                                            slotProps={{
-                                                input: {
-                                                    name: 'work-desc',
-                                                },
-                                            }}
-                                        />
-                                    </FormControl>
-                                    <FormControl sx={{ gridColumn: '1/-1' }}>
-                                        <FormLabel>What is your timeline?</FormLabel>
-                                        <Input
-                                            type="date"
-                                            slotProps={{
-                                                input: {
-                                                    name: 'work-due',
-                                                },
-                                            }}
-                                        />
-                                    </FormControl>
-                                    <FormControl sx={{ gridColumn: '1/-1' }}>
-                                        <FormLabel>What is your budget?</FormLabel>
+                                        <FormLabel sx={{ my: '12px' }}>Pitch your price</FormLabel>
                                         <Input
                                             placeholder="Amount"
                                             startDecorator={{ dollar: '$', baht: '฿', yen: '¥' }[currency]}
@@ -117,6 +134,27 @@ function CreateWork() {
                                         />
                                     </FormControl>
                                     <FormControl sx={{ gridColumn: '1/-1' }}>
+                                        <FormLabel>Your timeline</FormLabel>
+                                        <Input
+                                            type="date"
+                                            slotProps={{
+                                                input: {
+                                                    name: 'work-due',
+                                                },
+                                            }}
+                                        />
+                                    </FormControl>
+                                    <FormControl sx={{ gridColumn: '1/-1' }}>
+                                        <FormLabel>Cover letter</FormLabel>
+                                        <Textarea
+                                            slotProps={{
+                                                input: {
+                                                    name: 'work-cover-letter',
+                                                },
+                                            }}
+                                        />
+                                    </FormControl>
+                                    <FormControl sx={{ gridColumn: '1/-1' }}>
                                         <FormLabel>Attach Files</FormLabel>
                                         <Input
                                             type="file"
@@ -132,12 +170,14 @@ function CreateWork() {
                                             className="btn rounded-pill btn-primary-style w-100 fw-bold"
                                             type="submit"
                                         >
-                                            Save and Post
+                                            Send proposal
                                         </button>
                                     </CardActions>
                                 </CardContent>
                             </Card>
                         </Col>
+
+                        {/* Bio card */}
                         <Col xs={12} lg={4}>
                             <Card
                                 variant="outlined"
@@ -172,4 +212,4 @@ function CreateWork() {
     )
 }
 
-export default CreateWork
+export default SendProposal

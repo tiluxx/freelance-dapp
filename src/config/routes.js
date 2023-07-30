@@ -6,6 +6,10 @@ const routes = {
     createWork: '/create_work',
     messages: '/messages',
     profile: '/profile',
+    sendProposal: '/send_proposal',
+    workProposals: '/work_proposals',
+    workDashboard: '/work_dashboard',
+    workDetail: '/work_detail',
     notFound: '*',
 }
 

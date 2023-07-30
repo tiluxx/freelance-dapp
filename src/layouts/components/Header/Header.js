@@ -1,10 +1,11 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Avatar from '@mui/joy/Avatar'
+import Divider from '@mui/joy/Divider'
 import Popper from '@mui/base/Popper'
 import ClickAwayListener from '@mui/base/ClickAwayListener'
 import MenuList from '@mui/joy/MenuList'
@@ -15,13 +16,18 @@ import {
     SettingsRegular,
     PaymentRegular,
     AlertRegular,
+    SignOutRegular,
+    CheckmarkCircleRegular,
 } from '@fluentui/react-icons'
+
+import { WalletContext } from 'src/App'
 import styles from './Header.module.scss'
 import config from 'src/config'
 
 const cx = classNames.bind(styles)
 
 function Header() {
+    const { isSignedIn, wallet } = useContext(WalletContext)
     const buttonRef = useRef(null)
     const [open, setOpen] = useState(false)
 
@@ -57,11 +63,18 @@ function Header() {
                         <Nav.Item>
                             <Link to={config.routes.findTalent}>Find talent</Link>
                         </Nav.Item>
-                        <Nav.Item>
-                            <Link to={config.routes.about}>Why us</Link>
-                        </Nav.Item>
+                        {false && (
+                            <Nav.Item>
+                                <Link to={config.routes.about}>Why us</Link>
+                            </Nav.Item>
+                        )}
+                        {true && (
+                            <Nav.Item>
+                                <Link to={config.routes.workDashboard}>Work Dashboard</Link>
+                            </Nav.Item>
+                        )}
                     </Nav>
-                    {true && (
+                    {true ? (
                         <Nav className={cx('profile-wrapper')}>
                             <Nav.Item href="#" className="fs-2">
                                 <Link to={config.routes.messages}>
@@ -111,6 +124,11 @@ function Header() {
                                         sx={{ boxShadow: 'md', bgcolor: 'background.body' }}
                                         placement="bottom-end"
                                     >
+                                        <MenuItem>
+                                            <CheckmarkCircleRegular />
+                                            wallet.accountId
+                                        </MenuItem>
+                                        <Divider insert="none" sx={{ '--Divider-lineColor': 'rgb( 115 115 140)' }} />
                                         <Link to={config.routes.profile}>
                                             <MenuItem onClick={handleClose}>
                                                 <PersonAvailableRegular />
@@ -129,16 +147,21 @@ function Header() {
                                                 Payment
                                             </MenuItem>
                                         </Link>
+                                        <Divider insert="none" sx={{ '--Divider-lineColor': 'rgb( 115 115 140)' }} />
+                                        <Link>
+                                            <MenuItem onClick={() => wallet.signOut()}>
+                                                <SignOutRegular />
+                                                Sign Out
+                                            </MenuItem>
+                                        </Link>
                                     </MenuList>
                                 </ClickAwayListener>
                             </Popper>
                         </Nav>
-                    )}
-
-                    {false && (
+                    ) : (
                         <Nav>
                             <Nav.Item className={['btn', 'rounded-pill', 'btn-outline-style', 'fw-bold']}>
-                                <Link to={config.routes.home}>Sign in</Link>
+                                <Link to={config.routes.home}>Sign in with Near</Link>
                             </Nav.Item>
                         </Nav>
                     )}
