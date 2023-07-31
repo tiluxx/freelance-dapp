@@ -25,8 +25,8 @@ header {
 .header-title {
     margin-bottom: 30px;
     font-size: 5.2rem;
-    line-height: 6rem;
-    color: #000;
+    line-height: 7rem;
+    color: var(--text-color);
 }
 
 .header-title span {
@@ -53,7 +53,13 @@ header {
     color: #666;
 }
 
+.header-img-wrapper {
+    transform: translateY(-100px);
+}
+
 .header-figure-main {
+    -webkit-user-drag: none;
+    user-drag: none;
     animation: floating 5s infinite ease-in-out;
 }
 
@@ -80,12 +86,12 @@ header {
         transform: translate(0, 0px);
     }
     50% {
-        -webkit-transform: translate(0, 20px);
-        transform: translate(0, 20px);
+        -webkit-transform: translate(0, 30px);
+        transform: translate(0, 30px);
     }
     100% {
-        -webkit-transform: translate(0, -0px);
-        transform: translate(0, -0px);
+        -webkit-transform: translate(0, 0px);
+        transform: translate(0, 0px);
     }
 }
 

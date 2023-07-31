@@ -27,7 +27,6 @@ import {
     DismissRegular,
     ArrowStepBackRegular,
     EditRegular,
-    DeleteRegular,
     EyeRegular,
 } from '@fluentui/react-icons'
 import config from 'src/config'
@@ -257,7 +256,7 @@ function WorksTable() {
                 }}
             >
                 <FormControl sx={{ flex: 1 }} size="sm">
-                    <FormLabel>Search for order</FormLabel>
+                    <FormLabel>Search for work</FormLabel>
                     <Input placeholder="Search" startDecorator={<i data-feather="search" />} />
                 </FormControl>
 
@@ -395,24 +394,20 @@ function WorksTable() {
                                             View
                                         </Link>
                                     </LinkRoute>
-                                    <Link
-                                        fontWeight="lg"
-                                        component="button"
-                                        color="neutral"
-                                        sx={{ ml: 2 }}
-                                        startDecorator={<EditRegular />}
+                                    <LinkRoute
+                                        to={config.routes.createWork}
+                                        state={{ type: 'modify', work: { id: 1 } }}
                                     >
-                                        Edit
-                                    </Link>
-                                    <Link
-                                        fontWeight="lg"
-                                        component="button"
-                                        color="danger"
-                                        sx={{ ml: 2 }}
-                                        startDecorator={<DeleteRegular />}
-                                    >
-                                        Delete
-                                    </Link>
+                                        <Link
+                                            fontWeight="lg"
+                                            component="button"
+                                            color="neutral"
+                                            sx={{ ml: 2 }}
+                                            startDecorator={<EditRegular />}
+                                        >
+                                            Edit/Delete
+                                        </Link>
+                                    </LinkRoute>
                                 </td>
                             </tr>
                         ))}

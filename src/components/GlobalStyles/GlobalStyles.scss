@@ -3,9 +3,10 @@
 
 :root {
     --primary-color: hsl(244, 100%, 50%);
-    --neutral-color: hsl(240, 12%, 40%);
-    --background-color-surface: #09090D;
+    --neutral-color: hsl(240, 10%, 60%);
+    --background-color-surface: #09090d;
     --background-color-body: #131318;
+    --text-color: hsl(0, 0%, 100%);
     --gradient-color-purple-pink: linear-gradient(
         to right,
         #501e9c 0%,
@@ -70,6 +71,10 @@ a {
     text-decoration: none;
 }
 
+form {
+    width: 100%;
+}
+
 .btn-primary-style {
     padding: 12px 30px;
     display: -ms-inline-flexbox;
@@ -99,7 +104,8 @@ a {
 .btn-outline-style {
     padding: 8px;
     border: 1px solid transparent;
-    border-color: #0002 !important;
+    color: var(--text-color);
+    border: 1px solid hsla(0, 0%, 100%, 0.502) !important;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
         box-shadow 0.15s ease-in-out;
 }
@@ -221,7 +227,7 @@ a {
 .navbar.navbar-style .nav-link,
 .navbar.navbar-style .nav-item {
     position: relative;
-    color: #000;
+    color: var(--text-color);
     font-size: 1.2rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -232,7 +238,7 @@ a {
 
 .nav-link a,
 .nav-item a {
-    color: #000;
+    color: var(--text-color);
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
         box-shadow 0.15s ease-in-out;
 }

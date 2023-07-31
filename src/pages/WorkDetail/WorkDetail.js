@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import classNames from 'classnames/bind'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -13,11 +14,19 @@ import Typography from '@mui/joy/Typography'
 import { DocumentFolderRegular } from '@fluentui/react-icons'
 
 import Banner from 'src/pages/components/Banner'
+import ModalAlert from 'src/pages/components/ModalAlert'
+import config from 'src/config'
 import styles from './WorkDetail.module.scss'
 
 const cx = classNames.bind(styles)
 
 function WorkDetail() {
+    const [openModal, setOpenModal] = useState(false)
+
+    const payWorkHandler = (e) => {
+        e.preventDefault()
+        setOpenModal(true)
+    }
     return (
         <div>
             <Container>
@@ -116,7 +125,10 @@ function WorkDetail() {
                                     <button className="cancel-btn btn rounded-pill btn-outline-style">
                                         Request to Redo
                                     </button>
-                                    <button className="save-btn btn rounded-pill btn-primary-style">
+                                    <button
+                                        className="save-btn btn rounded-pill btn-primary-style"
+                                        onClick={payWorkHandler}
+                                    >
                                         Confirm and Pay
                                     </button>
                                 </CardActions>
@@ -130,6 +142,7 @@ function WorkDetail() {
                             variant="outlined"
                             sx={[
                                 {
+                                    p: '32px 40px',
                                     width: '100%',
                                     gap: 1.5,
                                     alignItems: 'flex-start',
@@ -178,6 +191,13 @@ function WorkDetail() {
                     </Col>
                 </Row>
             </Container>
+            <ModalAlert
+                open={openModal}
+                setOpen={setOpenModal}
+                title="Payment Successfully"
+                message="Wow! This was a long journey to have your work done by our talents. You've paid your bill successfuly."
+                backPath={config.routes.proposalDashboard}
+            />
         </div>
     )
 }

@@ -23,6 +23,7 @@ import {
 import { WalletContext } from 'src/App'
 import styles from './Header.module.scss'
 import config from 'src/config'
+import logoWhite from './logo_white.svg'
 
 const cx = classNames.bind(styles)
 
@@ -50,7 +51,7 @@ function Header() {
         <Navbar expand="lg" className="navbar-style">
             <Container>
                 <Navbar.Brand href="/">
-                    <img src="" alt="Logo" />
+                    <img src={logoWhite} alt="Logo" className={cx('logo-img')} />
                 </Navbar.Brand>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className={['me-auto', 'nav-list']}>
@@ -70,7 +71,12 @@ function Header() {
                         )}
                         {true && (
                             <Nav.Item>
-                                <Link to={config.routes.workDashboard}>Work Dashboard</Link>
+                                <Link to={config.routes.proposalDashboard}>Your proposals</Link>
+                            </Nav.Item>
+                        )}
+                        {true && (
+                            <Nav.Item>
+                                <Link to={config.routes.workDashboard}>Work dashboard</Link>
                             </Nav.Item>
                         )}
                     </Nav>

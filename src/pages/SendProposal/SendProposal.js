@@ -19,12 +19,21 @@ import Chip from '@mui/joy/Chip'
 import Typography from '@mui/joy/Typography'
 
 import Banner from 'src/pages/components/Banner'
+import ModalAlert from 'src/pages/components/ModalAlert'
+import config from 'src/config'
 import styles from './SendProposal.module.scss'
 
 const cx = classNames.bind(styles)
 
 function SendProposal() {
     const [currency, setCurrency] = useState('dollar')
+    const [openModal, setOpenModal] = useState(false)
+
+    const sendProposalHandler = (e) => {
+        e.preventDefault()
+        setOpenModal(true)
+    }
+
     return (
         <div>
             <Box>
@@ -99,81 +108,83 @@ function SendProposal() {
                             >
                                 <h3 className={cx('form-title')}>About Your Proposal</h3>
                                 <Divider insert="none" sx={{ '--Divider-lineColor': 'rgb( 115 115 140)' }} />
-                                <CardContent
-                                    sx={{
-                                        display: 'grid',
-                                        gridTemplateColumns: 'repeat(2, minmax(80px, 1fr))',
-                                        gap: 1.5,
-                                    }}
-                                >
-                                    <FormControl sx={{ gridColumn: '1/-1' }}>
-                                        <FormLabel sx={{ my: '12px' }}>Pitch your price</FormLabel>
-                                        <Input
-                                            placeholder="Amount"
-                                            startDecorator={{ dollar: '$', baht: '฿', yen: '¥' }[currency]}
-                                            endDecorator={
-                                                <Fragment>
-                                                    <Divider orientation="vertical" />
-                                                    <Select
-                                                        variant="plain"
-                                                        value={currency}
-                                                        onChange={(_, value) => setCurrency(value)}
-                                                        sx={{ '&:hover': { bgcolor: 'transparent' } }}
-                                                    >
-                                                        <Option value="dollar">US dollar</Option>
-                                                        <Option value="baht">Thai baht</Option>
-                                                        <Option value="yen">Japanese yen</Option>
-                                                    </Select>
-                                                </Fragment>
-                                            }
-                                            slotProps={{
-                                                input: {
-                                                    name: 'work-budget',
-                                                },
-                                            }}
-                                        />
-                                    </FormControl>
-                                    <FormControl sx={{ gridColumn: '1/-1' }}>
-                                        <FormLabel>Your timeline</FormLabel>
-                                        <Input
-                                            type="date"
-                                            slotProps={{
-                                                input: {
-                                                    name: 'work-due',
-                                                },
-                                            }}
-                                        />
-                                    </FormControl>
-                                    <FormControl sx={{ gridColumn: '1/-1' }}>
-                                        <FormLabel>Cover letter</FormLabel>
-                                        <Textarea
-                                            slotProps={{
-                                                input: {
-                                                    name: 'work-cover-letter',
-                                                },
-                                            }}
-                                        />
-                                    </FormControl>
-                                    <FormControl sx={{ gridColumn: '1/-1' }}>
-                                        <FormLabel>Attach Files</FormLabel>
-                                        <Input
-                                            type="file"
-                                            slotProps={{
-                                                input: {
-                                                    name: 'work-attachments',
-                                                },
-                                            }}
-                                        />
-                                    </FormControl>
-                                    <CardActions sx={{ gridColumn: '1/-1', my: '24px' }}>
-                                        <button
-                                            className="btn rounded-pill btn-primary-style w-100 fw-bold"
-                                            type="submit"
-                                        >
-                                            Send proposal
-                                        </button>
-                                    </CardActions>
-                                </CardContent>
+                                <form onSubmit={sendProposalHandler}>
+                                    <CardContent
+                                        sx={{
+                                            display: 'grid',
+                                            gridTemplateColumns: 'repeat(2, minmax(80px, 1fr))',
+                                            gap: 1.5,
+                                        }}
+                                    >
+                                        <FormControl sx={{ gridColumn: '1/-1' }}>
+                                            <FormLabel sx={{ my: '12px' }}>Pitch your price</FormLabel>
+                                            <Input
+                                                placeholder="Amount"
+                                                startDecorator={{ dollar: '$', baht: '฿', yen: '¥' }[currency]}
+                                                endDecorator={
+                                                    <Fragment>
+                                                        <Divider orientation="vertical" />
+                                                        <Select
+                                                            variant="plain"
+                                                            value={currency}
+                                                            onChange={(_, value) => setCurrency(value)}
+                                                            sx={{ '&:hover': { bgcolor: 'transparent' } }}
+                                                        >
+                                                            <Option value="dollar">US dollar</Option>
+                                                            <Option value="baht">Thai baht</Option>
+                                                            <Option value="yen">Japanese yen</Option>
+                                                        </Select>
+                                                    </Fragment>
+                                                }
+                                                slotProps={{
+                                                    input: {
+                                                        name: 'work-budget',
+                                                    },
+                                                }}
+                                            />
+                                        </FormControl>
+                                        <FormControl sx={{ gridColumn: '1/-1' }}>
+                                            <FormLabel>Your timeline</FormLabel>
+                                            <Input
+                                                type="date"
+                                                slotProps={{
+                                                    input: {
+                                                        name: 'work-due',
+                                                    },
+                                                }}
+                                            />
+                                        </FormControl>
+                                        <FormControl sx={{ gridColumn: '1/-1' }}>
+                                            <FormLabel>Cover letter</FormLabel>
+                                            <Textarea
+                                                slotProps={{
+                                                    input: {
+                                                        name: 'work-cover-letter',
+                                                    },
+                                                }}
+                                            />
+                                        </FormControl>
+                                        <FormControl sx={{ gridColumn: '1/-1' }}>
+                                            <FormLabel>Attach Files</FormLabel>
+                                            <Input
+                                                type="file"
+                                                slotProps={{
+                                                    input: {
+                                                        name: 'work-attachments',
+                                                    },
+                                                }}
+                                            />
+                                        </FormControl>
+                                        <CardActions sx={{ gridColumn: '1/-1', my: '24px' }}>
+                                            <button
+                                                className="btn rounded-pill btn-primary-style w-100 fw-bold"
+                                                type="submit"
+                                            >
+                                                Send proposal
+                                            </button>
+                                        </CardActions>
+                                    </CardContent>
+                                </form>
                             </Card>
                         </Col>
 
@@ -208,6 +219,12 @@ function SendProposal() {
                     </Row>
                 </Container>
             </Box>
+            <ModalAlert
+                open={openModal}
+                setOpen={setOpenModal}
+                message="Your proposal've sent to client successfully! Be patient to wait response from them."
+                backPath={config.routes.findWork}
+            />
         </div>
     )
 }

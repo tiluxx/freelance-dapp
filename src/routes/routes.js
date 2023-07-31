@@ -12,6 +12,8 @@ import SendProposal from 'src/pages/SendProposal'
 import WorkProposals from 'src/pages/WorkProposals'
 import WorkDashboard from 'src/pages/WorkDashboard'
 import WorkDetail from 'src/pages/WorkDetail'
+import ProposalsDashboard from 'src/pages/ProposalsDashboard'
+import WorkDetailFreelancerSide from 'src/pages/WorkDetailFreelancerSide'
 
 // Public routes
 const publicRoutes = [
@@ -26,6 +28,8 @@ const publicRoutes = [
     { path: config.routes.workProposals, component: WorkProposals, layout: HomeLayout },
     { path: config.routes.workDashboard, component: WorkDashboard, layout: HomeLayout },
     { path: config.routes.workDetail, component: WorkDetail, layout: HomeLayout },
+    { path: config.routes.proposalDashboard, component: ProposalsDashboard, layout: HomeLayout },
+    { path: config.routes.workDetailFreelancerSide, component: WorkDetailFreelancerSide, layout: HomeLayout },
     { path: config.routes.notFound, component: Home, layout: HomeLayout },
 ]
 

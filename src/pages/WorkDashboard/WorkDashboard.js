@@ -1,4 +1,5 @@
 import { useLayoutEffect, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -9,10 +10,13 @@ import Avatar from '@mui/joy/Avatar'
 import Chip from '@mui/joy/Chip'
 import Card from '@mui/joy/Card'
 import CardContent from '@mui/joy/CardContent'
+import Button from '@mui/joy/Button'
+import { AddRegular } from '@fluentui/react-icons'
 
 import useScript from 'src/hooks/useScript'
 import WorksTable from 'src/pages/components/WorksTable'
 import Banner from 'src/pages/components/Banner'
+import config from 'src/config'
 import styles from './WorkDashboard.module.scss'
 
 const cx = classNames.bind(styles)
@@ -63,10 +67,34 @@ function WorkDashboard() {
                                             gap: 1,
                                         })}
                                     >
-                                        <Box>
+                                        <Box
+                                            sx={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                my: 1,
+                                                gap: 1,
+                                                flexWrap: 'wrap',
+                                                '& > *': {
+                                                    minWidth: 'clamp(0px, (500px - 100%) * 999, 100%)',
+                                                    flexGrow: 1,
+                                                },
+                                            }}
+                                        >
                                             <Typography level="h1" fontSize="xl4">
                                                 Work Posts
                                             </Typography>
+                                            <Box sx={{ flex: 999 }} />
+                                            <Box sx={{ display: 'flex', gap: 1, '& > *': { flexGrow: 1 } }}>
+                                                <Link to={config.routes.createWork} state={{ type: 'create' }}>
+                                                    <Button
+                                                        variant="outlined"
+                                                        color="neutral"
+                                                        startDecorator={<AddRegular />}
+                                                    >
+                                                        Post work
+                                                    </Button>
+                                                </Link>
+                                            </Box>
                                         </Box>
                                         <WorksTable />
                                     </Box>
