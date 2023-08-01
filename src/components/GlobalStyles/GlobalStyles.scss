@@ -179,7 +179,8 @@ form {
 }
 
 .MuiFormLabel-root,
-.MuiFormHelperText-root {
+.MuiFormHelperText-root,
+.MuiOption-root {
     font-family: 'Inter', sans-serif !important;
     font-size: 1.4rem !important;
 }
@@ -193,6 +194,7 @@ form {
     font-size: 1.4rem !important;
 }
 
+.MuiButton-root.MuiButton-variantSolid,
 .MuiInput-startDecorator,
 .MuiFormHelperText-root,
 .MuiTypography-root.MuiTypography-body1,
@@ -212,6 +214,11 @@ form {
 
 .MuiButton-root.MuiButton-colorNeutral {
     padding: 10px 20px;
+}
+
+.MuiButton-root.MuiButton-variantSolid.MuiButton-colorPrimary {
+    color: #fff;
+    background-color: var(--primary-color);
 }
 
 .fs-2 {

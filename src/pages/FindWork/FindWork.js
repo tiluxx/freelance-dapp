@@ -11,6 +11,12 @@ import IconButton from '@mui/joy/IconButton'
 import Typography from '@mui/joy/Typography'
 import Chip from '@mui/joy/Chip'
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder'
+import FormControl from '@mui/joy/FormControl'
+import FormLabel from '@mui/joy/FormLabel'
+import Select from '@mui/joy/Select'
+import Option from '@mui/joy/Option'
+import Input from '@mui/joy/Input'
+import { SearchRegular } from '@fluentui/react-icons'
 
 import Banner from 'src/pages/components/Banner'
 import styles from './FindWork.module.scss'
@@ -29,6 +35,68 @@ function FindWork() {
 
                     {/* Works grid */}
                     <Col xs={12} md={9}>
+                        <Card
+                            variant="outlined"
+                            sx={{
+                                width: '100%',
+                            }}
+                            className={cx('work-wrapper')}
+                        >
+                            <Box
+                                sx={{
+                                    borderRadius: 'sm',
+                                    py: 2,
+                                    display: {
+                                        xs: 'none',
+                                        sm: 'flex',
+                                    },
+                                    flexWrap: 'wrap',
+                                    gap: 1.5,
+                                    '& > *': {
+                                        minWidth: {
+                                            xs: '120px',
+                                            md: '160px',
+                                        },
+                                    },
+                                }}
+                            >
+                                <FormControl sx={{ flex: 1 }} size="lg">
+                                    <FormLabel>Search for work</FormLabel>
+                                    <Input
+                                        placeholder="Search"
+                                        startDecorator={<SearchRegular />}
+                                        sx={{ '--Icon-fontSize': '2rem', '--Input-focusedHighlight': '#1100ff' }}
+                                    />
+                                </FormControl>
+                                <FormControl size="lg">
+                                    <FormLabel>Status</FormLabel>
+                                    <Select
+                                        placeholder="Sort by"
+                                        sx={{
+                                            py: 0,
+                                        }}
+                                        // slotProps={{ button: { sx: { whiteSpace: 'nowrap' } } }}
+                                    >
+                                        <Option
+                                            value="paid"
+                                            onClick={() => {
+                                                console.log('newest')
+                                            }}
+                                        >
+                                            Newest works
+                                        </Option>
+                                        <Option
+                                            value="pending"
+                                            onClick={() => {
+                                                console.log('best')
+                                            }}
+                                        >
+                                            Best employers
+                                        </Option>
+                                    </Select>
+                                </FormControl>
+                            </Box>
+                        </Card>
                         <Card
                             variant="outlined"
                             sx={{

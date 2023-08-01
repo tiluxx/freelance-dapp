@@ -84,6 +84,7 @@ function CreateWork() {
                                                             name: 'work-title',
                                                         },
                                                     }}
+                                                    required
                                                 />
                                             </FormControl>
                                             <FormControl sx={{ gridColumn: '1/-1' }}>
@@ -95,6 +96,7 @@ function CreateWork() {
                                                         },
                                                     }}
                                                 />
+                                                required
                                             </FormControl>
                                             <FormControl sx={{ gridColumn: '1/-1' }}>
                                                 <FormLabel>What is your timeline?</FormLabel>
@@ -132,6 +134,7 @@ function CreateWork() {
                                                             name: 'work-budget',
                                                         },
                                                     }}
+                                                    required
                                                 />
                                             </FormControl>
                                             <FormControl sx={{ gridColumn: '1/-1' }}>

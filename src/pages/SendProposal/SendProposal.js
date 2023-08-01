@@ -20,6 +20,7 @@ import Typography from '@mui/joy/Typography'
 
 import Banner from 'src/pages/components/Banner'
 import ModalAlert from 'src/pages/components/ModalAlert'
+import ModalLoading from 'src/pages/components/ModalLoading'
 import config from 'src/config'
 import styles from './SendProposal.module.scss'
 
@@ -27,11 +28,12 @@ const cx = classNames.bind(styles)
 
 function SendProposal() {
     const [currency, setCurrency] = useState('dollar')
-    const [openModal, setOpenModal] = useState(false)
+    const [openModalAlert, setOpenModalAlert] = useState(false)
+    const [openModalLoading, setOpenModalLoading] = useState(false)
 
     const sendProposalHandler = (e) => {
         e.preventDefault()
-        setOpenModal(true)
+        setOpenModalLoading(true)
     }
 
     return (
@@ -141,6 +143,7 @@ function SendProposal() {
                                                         name: 'work-budget',
                                                     },
                                                 }}
+                                                required
                                             />
                                         </FormControl>
                                         <FormControl sx={{ gridColumn: '1/-1' }}>
@@ -162,6 +165,7 @@ function SendProposal() {
                                                         name: 'work-cover-letter',
                                                     },
                                                 }}
+                                                required
                                             />
                                         </FormControl>
                                         <FormControl sx={{ gridColumn: '1/-1' }}>
@@ -220,10 +224,16 @@ function SendProposal() {
                 </Container>
             </Box>
             <ModalAlert
-                open={openModal}
-                setOpen={setOpenModal}
+                open={openModalAlert}
+                setOpen={setOpenModalAlert}
                 message="Your proposal've sent to client successfully! Be patient to wait response from them."
                 backPath={config.routes.findWork}
+            />
+            <ModalLoading
+                open={openModalLoading}
+                setOpen={setOpenModalLoading}
+                title="Sending"
+                message="We are preparing your work to be published."
             />
         </div>
     )
